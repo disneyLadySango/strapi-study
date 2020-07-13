@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "content_details",
+  "info": {
+    "name": "ContentDetail"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Header": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "richtext"
+    },
+    "content": {
+      "model": "content",
+      "via": "content_details"
+    },
+    "Sort": {
+      "type": "integer"
+    }
+  }
+}

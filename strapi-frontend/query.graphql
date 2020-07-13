@@ -1,0 +1,24 @@
+fragment detail on ContentDetail {
+  Header,
+  Text,
+  Sort
+}
+
+query getAllContents {
+  contents(
+    sort:"id"
+  ) {
+    id,
+    Title,
+  }
+}
+
+query findContentDetail(
+  $id: ID!
+) {
+  content(id: $id) {
+    content_details(sort: "Sort") {
+      ...detail
+    }
+  }
+}
